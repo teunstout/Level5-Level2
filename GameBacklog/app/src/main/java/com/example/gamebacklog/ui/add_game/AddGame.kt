@@ -1,4 +1,4 @@
-package com.example.gamebacklog.ui
+package com.example.gamebacklog.ui.add_game
 
 import android.os.Bundle
 import com.google.android.material.snackbar.Snackbar

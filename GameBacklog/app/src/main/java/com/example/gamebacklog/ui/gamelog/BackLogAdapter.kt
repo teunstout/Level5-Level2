@@ -1,4 +1,4 @@
-package com.example.gamebacklog.ui
+package com.example.gamebacklog.ui.gamelog
 
 import android.view.LayoutInflater
 import android.view.View

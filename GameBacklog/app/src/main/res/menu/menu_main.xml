@@ -1,4 +1,4 @@
 <menu
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.example.gamebacklog.ui.GameLog">
+    tools:context="com.example.gamebacklog.ui.gamelog.GameLog">
 </menu>
