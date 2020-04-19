@@ -2,4 +2,9 @@
     <string name="app_name">Game Backlog</string>
     <string name="app_menu_name">Add Game</string>
     <string name="release_string">Release: %s</string>
+    <string name="etTitleString">Title</string>
+    <string name="et_platform_string">Platform</string>
+    <string name="et_month_string">Month</string>
+    <string name="et_day_string">Day</string>
+    <string name="et_year_string">Year</string>
 </resources>
