@@ -5,11 +5,16 @@ import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.gamebacklog.R
+import com.example.gamebacklog.model.Game
 
 import kotlinx.android.synthetic.main.activity_game_log.*
+import kotlinx.android.synthetic.main.content_game_log.*
 
 class GameLog : AppCompatActivity() {
+//    private lateinit var gameLog: List<Game>
+//    private lateinit var BackLogAdapter: BackLogAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -17,20 +22,19 @@ class GameLog : AppCompatActivity() {
         setSupportActionBar(toolbar)
 
         initView()
-        initViewHolder()
-
+//        initViewModel()
     }
 
     private fun initView() {
-        fab.setOnClickListener { view ->
-        Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-            .setAction("Action", null).show()
-    }
+//        rvGameBackLog.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+//        rvGameBackLog.adapter = BackLogAdapter
+
+        fab.setOnClickListener { view -> } // Start activity here
     }
 
-    private fun initViewHolder() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
+//    private fun initViewModel() {
+//        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+//    }
 
 
 }
