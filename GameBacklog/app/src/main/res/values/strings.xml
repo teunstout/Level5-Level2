@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Game Backlog</string>
+    <string name="app_menu_name">Add Game</string>
+    <string name="release_string">Release: %s</string>
+</resources>
