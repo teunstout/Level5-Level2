@@ -1,6 +1,7 @@
 package com.example.gamebacklog.model
 
 import android.os.Parcelable
+import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import kotlinx.android.parcel.Parcelize
@@ -14,5 +15,5 @@ data class Game(
     var releaseDate: Date,
 
     @PrimaryKey(autoGenerate = true)
-    val gameId: Long?
+    val gameId: Long? = null
 ) : Parcelable
