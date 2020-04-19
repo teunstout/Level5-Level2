@@ -1,7 +1,8 @@
 package com.example.gamebacklog.ui.gamelog
 
 
-import android.provider.Settings.Global.getString
+
+import android.content.res.Resources
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,8 +16,8 @@ class BackLogAdapter(var listGames :List<Game>): RecyclerView.Adapter<BackLogAda
     inner class ViewHolder(view: View): RecyclerView.ViewHolder(view){
         fun bind(game: Game){
             itemView.tvTitle.text = game.title
-            itemView.tvPlatform.text = game.platform
-//            itemView.tvRelease.text = getString(R.string.release_string, game.releaseDate.toString())
+            itemView.tvPlatform.text = ""
+            itemView.tvRelease.text = ""
         }
     }
 

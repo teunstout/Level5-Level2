@@ -10,13 +10,11 @@ import kotlinx.coroutines.launch
 
 class AddGameViewModel(application: Application) : AndroidViewModel(application) {
     private val gameRepository = GameRepository(application.applicationContext)
-    private val coroutine = CoroutineScope(Dispatchers.Main)
+    private val coroutine = CoroutineScope(Dispatchers.IO)
 
     fun insertGame(game: Game) {
         coroutine.launch {
-            CoroutineScope(Dispatchers.IO).launch {
                 gameRepository.insertGame(game)
-            }
         }
     }
 }

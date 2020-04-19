@@ -7,13 +7,25 @@ import com.example.gamebacklog.database.GameRepository
 import com.example.gamebacklog.model.Game
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class GameLogViewModel(application: Application) : AndroidViewModel(application){
-
     private val repository = GameRepository(application.applicationContext)
     private val coroutine = CoroutineScope(Dispatchers.Main)
 
     fun getAllData(): LiveData<List<Game>>{
         return repository.getAllGames()
+    }
+
+    fun deleteGame(game: Game){
+        coroutine.launch {
+            repository.deleteGame(game)
+        }
+    }
+
+    fun deleteAllGames(){
+        coroutine.launch {
+            repository.deleteAllGames()
+        }
     }
 }

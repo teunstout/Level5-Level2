@@ -21,7 +21,7 @@ import kotlin.collections.ArrayList
 
 class GameLog : AppCompatActivity() {
 
-    private var games = arrayListOf<Game>(Game("","", Date()))
+    private var games = arrayListOf<Game>()
     private val gameLogViewModel: GameLogViewModel by viewModels()
     private val backLogAdapter = BackLogAdapter(games)
 
@@ -35,7 +35,8 @@ class GameLog : AppCompatActivity() {
     }
 
     private fun initView() {
-        rvGameBackLog.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+        rvGameBackLog.layoutManager =
+            LinearLayoutManager(this@GameLog, LinearLayoutManager.VERTICAL, false)
         rvGameBackLog.adapter = backLogAdapter
 
         fab.setOnClickListener {
@@ -48,10 +49,10 @@ class GameLog : AppCompatActivity() {
         gameLogViewModel.getAllData()
             .observe(this,
                 Observer { gameListDatabase ->
-                games = gameListDatabase as ArrayList<Game>
-                backLogAdapter.notifyDataSetChanged()
-        })
+                    games.clear()
+                    games.addAll(gameListDatabase as ArrayList<Game>)
+                    backLogAdapter.notifyDataSetChanged()
+                }
+            )
     }
-
-
 }

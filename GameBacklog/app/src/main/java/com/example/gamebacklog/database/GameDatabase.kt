@@ -30,7 +30,6 @@ abstract class GameDatabase(): RoomDatabase() {
                             GameDatabase::class.java,
                             DATABASE_NAME
                         )
-                            .fallbackToDestructiveMigration()
                             .build()
                     }
                 }
