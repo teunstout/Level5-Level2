@@ -28,4 +28,10 @@ class GameLogViewModel(application: Application) : AndroidViewModel(application)
             repository.deleteAllGames()
         }
     }
+
+    fun insertGame(game: Game) {
+        coroutine.launch {
+            repository.insertGame(game)
+        }
+    }
 }

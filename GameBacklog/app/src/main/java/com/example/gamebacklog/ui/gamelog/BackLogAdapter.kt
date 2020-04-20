@@ -16,8 +16,8 @@ class BackLogAdapter(var listGames :List<Game>): RecyclerView.Adapter<BackLogAda
     inner class ViewHolder(view: View): RecyclerView.ViewHolder(view){
         fun bind(game: Game){
             itemView.tvTitle.text = game.title
-            itemView.tvPlatform.text = ""
-            itemView.tvRelease.text = ""
+            itemView.tvPlatform.text = game.platform
+            itemView.tvRelease.text =  itemView.context.getString(R.string.release_string, game.releaseDate)
         }
     }
 

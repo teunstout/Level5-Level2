@@ -12,7 +12,7 @@ import java.util.*
 data class Game(
     var title: String,
     var platform: String,
-    var releaseDate: Date,
+    var releaseDate: String,
 
     @PrimaryKey(autoGenerate = true)
     val gameId: Long? = null

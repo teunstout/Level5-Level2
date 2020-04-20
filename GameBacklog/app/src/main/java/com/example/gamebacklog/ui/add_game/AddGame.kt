@@ -15,6 +15,8 @@ import com.example.gamebacklog.model.Game
 
 import kotlinx.android.synthetic.main.activity_add_game.*
 import kotlinx.android.synthetic.main.content_add_game.*
+import java.lang.Error
+import java.text.DateFormat
 import java.text.SimpleDateFormat
 import java.time.Year
 import java.time.format.DateTimeFormatter
@@ -42,10 +44,8 @@ class AddGame : AppCompatActivity() {
                     Game(
                         etTitle.text.toString(),
                         etPlatform.text.toString(),
-                        Date(etYear.text.toString().toInt(),
-                            etMonth.text.toString().toInt(),
-                            etDay.text.toString().toInt()
-                        )
+                        // string
+                    Date().toString()
                     )
                 )
                 finish()
@@ -72,8 +72,12 @@ class AddGame : AppCompatActivity() {
         Toast.makeText(this, messageInt, Toast.LENGTH_SHORT).show()
     }
 
+    private fun toastMessageS(messageInt: String) {
+        Toast.makeText(this, messageInt, Toast.LENGTH_SHORT).show()
+    }
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when(item.itemId){
+        when (item.itemId) {
             android.R.id.home -> finish()
         }
         return super.onOptionsItemSelected(item)
