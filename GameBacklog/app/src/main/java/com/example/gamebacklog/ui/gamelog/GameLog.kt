@@ -23,6 +23,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import java.time.LocalDate
+import java.time.format.DateTimeFormatter
 import java.util.*
 import java.util.zip.Inflater
 import kotlin.collections.ArrayList
@@ -55,14 +56,21 @@ class GameLog : AppCompatActivity() {
     }
 
     private fun initViewModel() {
-        gameLogViewModel.getAllData()
+        gameLogViewModel.gameData
             .observe(this,
                 Observer { gameListDatabase ->
                     games.clear()
-                    games.addAll(gameListDatabase as ArrayList<Game>)
+
+                    if (gameListDatabase.isNullOrEmpty()) games.addAll(gameListDatabase as ArrayList<Game>)
+                    else games.addAll(sortedList(gameListDatabase))
                     backLogAdapter.notifyDataSetChanged()
                 }
             )
+    }
+
+    private fun sortedList(games: List<Game>): List<Game> {
+        val dateTimeFormatter: DateTimeFormatter = DateTimeFormatter.ofPattern(PATTERN_DATE)
+        return games.sortedByDescending { LocalDate.parse(it.releaseDate, dateTimeFormatter) }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -112,5 +120,8 @@ class GameLog : AppCompatActivity() {
             }
         }
         return ItemTouchHelper(callback)
+    }
+    companion object{
+        const val PATTERN_DATE = "d MMMM yyyy"
     }
 }

@@ -1,35 +1,25 @@
 package com.example.gamebacklog.ui.add_game
 
-import android.icu.util.LocaleData
-import android.os.Build
 import android.os.Bundle
-import android.os.Message
-import android.util.Log
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.activity.viewModels
-import androidx.annotation.RequiresApi
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.isEmpty
 import com.example.gamebacklog.R
 import com.example.gamebacklog.model.Game
+import com.example.gamebacklog.ui.gamelog.GameLog
 
 import kotlinx.android.synthetic.main.activity_add_game.*
 import kotlinx.android.synthetic.main.content_add_game.*
 import java.lang.Error
-import java.text.DateFormat
-import java.text.SimpleDateFormat
 import java.time.LocalDate
-import java.time.Year
 import java.time.format.DateTimeFormatter
-import java.util.*
 
 class AddGame : AppCompatActivity() {
 
     private val addGameViewModel: AddGameViewModel by viewModels()
     private var dateRelease = ""
-    private val pattern = DateTimeFormatter.ofPattern("d MMMM yyyy")
+    private val pattern = DateTimeFormatter.ofPattern(GameLog.PATTERN_DATE)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
