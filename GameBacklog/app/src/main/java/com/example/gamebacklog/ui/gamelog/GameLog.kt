@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
-import android.view.View
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
@@ -16,17 +15,10 @@ import com.example.gamebacklog.R
 import com.example.gamebacklog.model.Game
 import com.example.gamebacklog.ui.add_game.AddGame
 import com.google.android.material.snackbar.Snackbar
-
 import kotlinx.android.synthetic.main.activity_game_log.*
 import kotlinx.android.synthetic.main.content_game_log.*
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
-import java.util.*
-import java.util.zip.Inflater
-import kotlin.collections.ArrayList
 
 class GameLog : AppCompatActivity() {
 

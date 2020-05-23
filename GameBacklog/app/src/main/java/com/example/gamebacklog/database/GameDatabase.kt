@@ -4,11 +4,10 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import androidx.room.TypeConverters
 import com.example.gamebacklog.model.Game
 
 @Database(entities = [Game::class], version = 1, exportSchema = false)
-abstract class GameDatabase(): RoomDatabase() {
+abstract class GameDatabase : RoomDatabase() {
 
     abstract fun gameDao(): GameInterface // Use the interface to make the note app
 

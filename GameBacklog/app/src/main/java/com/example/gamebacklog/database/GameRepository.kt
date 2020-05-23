@@ -1,7 +1,6 @@
 package com.example.gamebacklog.database
 
 import android.content.Context
-import android.util.Log
 import androidx.lifecycle.LiveData
 import com.example.gamebacklog.model.Game
 
